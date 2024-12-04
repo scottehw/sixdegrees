@@ -10,7 +10,8 @@ import streamlit as st
 #st.set_page_config(layout="wide")
 st.title("6" + u'\N{DEGREE SIGN}')
 
-from config import apikey
+#from config import apikeystt
+apikey = st.secrets["apikey"]
 
 # Create a text element and let the reader know the data is loading.
 top_text = st.text('Search for a movie and pull back all associated actors and any other movies they have starred in.')
