@@ -6,11 +6,9 @@ import urllib
 import requests
 
 import streamlit as st
-
 #st.set_page_config(layout="wide")
 st.title("6" + u'\N{DEGREE SIGN}')
 
-#from config import apikeystt
 apikey = st.secrets["apikey"]
 
 # Create a text element and let the reader know the data is loading.
@@ -68,7 +66,7 @@ if start_movie:
         person_name = row['name']
         original_character = row['character']
         #url = f"https://api.themoviedb.org/3/person/{person_id}/combined_credits"
-        url = f"https://api.themoviedb.org/3/person/{person_id}?append_to_response=combined_credits"
+        url = f"https://api.themoviedb.org/3/person/{person_id}?append_to_response=combined_credits,images"
         response = requests.get(url, headers=headers)
         # If the response is successful, append the data to the list 
         if response.status_code == 200: 
